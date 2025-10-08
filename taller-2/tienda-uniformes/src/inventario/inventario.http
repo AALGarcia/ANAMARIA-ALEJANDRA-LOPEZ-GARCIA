@@ -1,0 +1,25 @@
+### Crear stock
+POST http://localhost:3000/inventario/stock
+Content-Type: application/json
+
+{
+  "productoId": 101,
+  "cantidad": 50
+}
+
+### Obtener stock por ID
+GET http://localhost:3000/inventario/stock/101
+
+### Actualizar stock
+PUT http://localhost:3000/inventario/stock/101
+Content-Type: application/json
+
+{
+  "cantidad": 75
+}
+
+### Eliminar stock
+DELETE http://localhost:3000/inventario/stock/101
+
+### Obtener todos los stocks (con filtro opcional)
+GET http://localhost:3000/inventario/stock?producto=Laptop

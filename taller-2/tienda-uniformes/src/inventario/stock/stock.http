@@ -1,0 +1,25 @@
+### Crear stock
+POST http://localhost:3000/stock
+Content-Type: application/json
+
+{
+  "productoId": 101,
+  "cantidad": 50
+}
+
+### Consultar stock por producto
+GET http://localhost:3000/stock?productoId=101
+
+### Consultar stock por ID
+GET http://localhost:3000/stock/1
+
+### Actualizar stock
+PUT http://localhost:3000/stock/1
+Content-Type: application/json
+
+{
+  "cantidad": 75
+}
+
+### Eliminar stock
+DELETE http://localhost:3000/stock/1
