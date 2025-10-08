@@ -1,0 +1,27 @@
+==================================EJERCICIOS===========================================
+
+____________________#1____________________________ 
+Recibir un pedido de productos desde la consola.
+
+Validar que los productos existan en el menú.
+
+Calcular el precio total del pedido.
+
+Aplicar un descuento si el día corresponde a una promoción.
+
+Mostrar el recibo final con los detalles del pedido.
+
+
+Inputs: El usuario ingresa los productos deseados y el día actual mediante la terminal.
+
+Condicionales (if/else): Para verificar si cada producto existe en el menú.
+
+Bucles (for...of): Para recorrer el pedido y sumar los precios.
+
+Switch: Para aplicar descuentos según el día.
+
+Outputs (console.log): Para mostrar el pedido, el día y el total a pagar.
+
+readline: Para capturar entradas desde la terminal en Node.js..
+
+
