@@ -1,7 +1,22 @@
+import { IsString, IsIn, IsNumber, IsDateString, IsOptional } from 'class-validator';
+
 export class CreateMovimientoDto {
-  tipo: string; // ejemplo: 'entrada' | 'salida'
-  cantidad: number;
+  @IsString()
   productoId: string;
+
+  @IsIn(['entrada', 'salida'])
+  tipo: string;
+
+  @IsNumber()
+  cantidad: number;
+
+  @IsDateString()
   fecha: Date;
+
+  @IsOptional()
+  @IsString()
   observaciones?: string;
 }
+
+
+

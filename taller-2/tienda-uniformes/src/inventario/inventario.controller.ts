@@ -7,46 +7,50 @@ import {
   Put,
   Delete,
   Query,
+  ParseIntPipe,
 } from '@nestjs/common';
-import { CreateStockDto } from './dto/create-inventario.dto';
-import { UpdateStockDto } from './dto/update-stock.dto';
+import { CreateInventarioDto } from './dto/create-inventario.dto';
+import { UpdateInventarioDto } from './dto/update-inventario.dto';
 
 @Controller('inventario')
 export class InventarioController {
-  @Post('stock')
-  createStock(@Body() data: CreateStockDto) {
+  @Post()
+  createStock(@Body() data: CreateInventarioDto) {
     return {
-      mensaje: 'Stock creado',
+      mensaje: 'Stock creado exitosamente',
       datos: data,
     };
   }
 
-  @Get('stock/:id')
-  getStockById(@Param('id') id: number) {
+  @Get(':id')
+  getStockById(@Param('id', ParseIntPipe) id: number) {
     return {
       mensaje: `Consultando stock con ID ${id}`,
     };
   }
 
-  @Put('stock/:id')
-  updateStock(@Param('id') id: number, @Body() data: UpdateStockDto) {
+  @Put(':id')
+  updateStock(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() data: UpdateInventarioDto,
+  ) {
     return {
       mensaje: `Stock actualizado con ID ${id}`,
       cambios: data,
     };
   }
 
-  @Delete('stock/:id')
-  deleteStock(@Param('id') id: number) {
+  @Delete(':id')
+  deleteStock(@Param('id', ParseIntPipe) id: number) {
     return {
       mensaje: `Stock eliminado con ID ${id}`,
     };
   }
 
-  @Get('stock')
+  @Get()
   getAllStock(@Query('producto') producto: string) {
     return {
-      mensaje: 'Listado de stock',
+      mensaje: 'Listado de inventario',
       filtro: producto || 'todos',
     };
   }

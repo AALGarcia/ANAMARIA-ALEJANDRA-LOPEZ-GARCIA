@@ -3,14 +3,18 @@ POST http://localhost:3000/movimiento
 Content-Type: application/json
 
 {
-  "productoId": 101,
+  "productoId": "U001",
   "tipo": "entrada",
-  "cantidad": 20,
-  "fecha": "2025-10-08"
+  "cantidad": 10,
+  "fecha": "2025-10-10",
+  "observaciones": "Reposición de stock"
 }
 
-### Listar movimientos por tipo
-GET http://localhost:3000/movimiento?tipo=salida
+### Listar todos
+GET http://localhost:3000/movimiento
+
+### Listar por tipo
+GET http://localhost:3000/movimiento?tipo=entrada
 
 ### Ver movimiento por ID
 GET http://localhost:3000/movimiento/1

@@ -1,7 +1,19 @@
+import { IsString, IsNumber, IsOptional, IsDateString } from 'class-validator';
+
 export class CreateInventarioDto {
+  @IsString()
   productoId: string;
+
+  @IsNumber()
   cantidad: number;
+
+  @IsString()
   ubicacion: string;
+
+  @IsDateString()
   fechaIngreso: Date;
-  estado?: string; // ejemplo: 'nuevo', 'usado', 'reservado'
+
+  @IsOptional()
+  @IsString()
+  estado?: string; // nuevo, usado, reservado, etc.
 }
