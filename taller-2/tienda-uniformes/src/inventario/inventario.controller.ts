@@ -14,6 +14,7 @@ import { UpdateInventarioDto } from './dto/update-inventario.dto';
 
 @Controller('inventario')
 export class InventarioController {
+  
   @Post()
   createStock(@Body() data: CreateInventarioDto) {
     return {

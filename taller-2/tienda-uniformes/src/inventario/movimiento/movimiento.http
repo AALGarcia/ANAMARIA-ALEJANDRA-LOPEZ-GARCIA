@@ -1,4 +1,4 @@
-### Registrar movimiento
+// Registrar movimiento
 POST http://localhost:3000/movimiento
 Content-Type: application/json
 
@@ -10,11 +10,11 @@ Content-Type: application/json
   "observaciones": "Reposición de stock"
 }
 
-### Listar todos
+//  Listar todos
 GET http://localhost:3000/movimiento
 
-### Listar por tipo
+// Listar por tipo
 GET http://localhost:3000/movimiento?tipo=entrada
 
-### Ver movimiento por ID
+// Ver movimiento por ID
 GET http://localhost:3000/movimiento/1

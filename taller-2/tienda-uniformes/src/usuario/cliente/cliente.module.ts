@@ -7,3 +7,5 @@ import { ClienteService } from './cliente.service';
   providers: [ClienteService]
 })
 export class ClienteModule {}
+
+
