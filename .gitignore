@@ -1,4 +1,6 @@
-# Ignorar carpeta taller-3.1
+# Ignorar carpeta talleres 1, 2, 3.1
+taller-1/
+taller-2/
 taller-3.1/
 
 # Archivos típicos de Node/NestJS
