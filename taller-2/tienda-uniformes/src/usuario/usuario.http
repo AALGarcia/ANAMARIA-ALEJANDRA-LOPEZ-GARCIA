@@ -1,0 +1,31 @@
+//Crear usuario
+POST http://localhost:3000/usuario
+Content-Type: application/json
+
+{
+  "nombre": "Ana López",
+  "email": "ana@example.com",
+  "contraseña": "123456",
+  "rol": "admin"
+}
+
+// Listar todos los usuarios
+GET http://localhost:3000/usuario
+
+// Listar usuarios por rol
+GET http://localhost:3000/usuario?rol=empleado
+
+// Obtener usuario por ID
+GET http://localhost:3000/usuario/1
+
+// Actualizar usuario
+PUT http://localhost:3000/usuario/1
+Content-Type: application/json
+
+{
+  "nombre": "Ana María López",
+  "activo": false
+}
+
+// Eliminar usuario
+DELETE http://localhost:3000/usuario/1

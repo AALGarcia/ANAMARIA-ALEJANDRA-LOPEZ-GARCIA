@@ -1,0 +1,20 @@
+// Registrar movimiento
+POST http://localhost:3000/movimiento
+Content-Type: application/json
+
+{
+  "productoId": "U001",
+  "tipo": "entrada",
+  "cantidad": 10,
+  "fecha": "2025-10-10",
+  "observaciones": "Reposición de stock"
+}
+
+//  Listar todos
+GET http://localhost:3000/movimiento
+
+// Listar por tipo
+GET http://localhost:3000/movimiento?tipo=entrada
+
+// Ver movimiento por ID
+GET http://localhost:3000/movimiento/1

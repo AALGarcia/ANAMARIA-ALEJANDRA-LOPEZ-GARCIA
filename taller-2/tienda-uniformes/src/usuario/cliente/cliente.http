@@ -1,0 +1,30 @@
+// Crear cliente
+POST http://localhost:3000/usuario/cliente
+Content-Type: application/json
+
+{
+  "nombre": "Carlos Pérez",
+  "email": "carlos@example.com",
+  "contraseña": "abc123",
+  "rol": "cliente",
+  "direccion": "Calle 123",
+  "telefono": "3001234567"
+}
+
+// Obtener todos los clientes
+GET http://localhost:3000/usuario/cliente
+
+// Obtener cliente por ID
+GET http://localhost:3000/usuario/cliente/1
+
+// Actualizar cliente
+PUT http://localhost:3000/usuario/cliente/1
+Content-Type: application/json
+
+{
+  "telefono": "3019876543",
+  "puntosAcumulados": 120
+}
+
+// Eliminar cliente
+DELETE http://localhost:3000/usuario/cliente/1
