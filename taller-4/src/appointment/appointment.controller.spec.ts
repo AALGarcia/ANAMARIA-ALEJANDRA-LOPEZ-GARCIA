@@ -4,7 +4,7 @@ import { AppointmentService } from './appointment.service';
 import { CreateAppointmentDto } from './dto/create-appointment.dto';
 import { UpdateAppointmentDto } from './dto/update-appointment.dto';
 import { Appointment } from './appointment.entity';
-import { NotFoundException, BadRequestException } from 'Taller-4/src/auth/node_modules/@nestjs/common';
+import { NotFoundException, BadRequestException } from '@nestjs/common';
 
 // Mocks de datos de ejemplo
 const mockAppointment: Appointment = { 

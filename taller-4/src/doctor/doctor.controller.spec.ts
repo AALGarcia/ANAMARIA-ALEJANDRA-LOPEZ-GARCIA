@@ -3,7 +3,7 @@ import { DoctorController } from './doctor.controller';
 import { DoctorService } from './doctor.service';
 import { CreateDoctorDto } from './dto/create-doctor.dto';
 import { UpdateDoctorDto } from './dto/update-doctor.dto';
-import { NotFoundException, BadRequestException } from 'Taller-4/src/auth/node_modules/@nestjs/common';
+import { NotFoundException, BadRequestException } from '@nestjs/common';
 
 //  Mocks de datos 
 const mockDoctor = {

@@ -1,5 +1,5 @@
 import { IsDateString, IsInt, IsString } from "class-validator";
-import { PartialType } from 'Taller-4/src/auth/node_modules/@nestjs/mapped-types';
+import { PartialType } from '@nestjs/mapped-types';
 import { CreateAppointmentDto } from './create-appointment.dto';
 import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
 

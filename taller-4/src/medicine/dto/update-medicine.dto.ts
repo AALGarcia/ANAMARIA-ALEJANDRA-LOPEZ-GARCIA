@@ -1,5 +1,5 @@
 import { IsInt, IsOptional, IsString, Length, Min } from "class-validator";
-import { PartialType } from 'Taller-4/src/auth/node_modules/@nestjs/mapped-types';
+import { PartialType } from '@nestjs/mapped-types';
 import { CreateMedicineDto } from './create-medicine.dto';
 import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
 

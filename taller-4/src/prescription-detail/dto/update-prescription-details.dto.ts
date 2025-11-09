@@ -1,4 +1,4 @@
-import { PartialType } from "Taller-4/src/auth/node_modules/@nestjs/mapped-types";
+import { PartialType } from '@nestjs/mapped-types';
 import { CreatePrescriptionDetailDto } from "./create-prescription-detail.dto";
 import { IsInt, IsNotEmpty, IsString } from "class-validator";
 import { ApiProperty } from "@nestjs/swagger";

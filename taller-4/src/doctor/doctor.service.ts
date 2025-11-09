@@ -7,6 +7,8 @@ import { CreateDoctorDto } from './dto/create-doctor.dto';
 import { UpdateDoctorDto } from './dto/update-doctor.dto';
 import { Specialty } from '../specialty/specialty.entity';
 
+
+
 @Injectable()
 export class DoctorService {
     constructor(

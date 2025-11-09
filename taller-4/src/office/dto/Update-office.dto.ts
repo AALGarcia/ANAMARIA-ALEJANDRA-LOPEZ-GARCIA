@@ -1,4 +1,4 @@
-import { PartialType } from 'Taller-4/src/auth/node_modules/@nestjs/mapped-types';
+import { PartialType } from '@nestjs/mapped-types';
 import { IsBoolean, IsInt, IsPositive } from 'class-validator';
 import { CreateOfficeDto } from './create-office.dto';
 import { ApiProperty } from '@nestjs/swagger';
