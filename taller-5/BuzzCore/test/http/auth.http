@@ -1,0 +1,53 @@
+
+### 1. REGISTER - Crear nuevo usuario
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "name": "Usuario de Prueba",
+  "email": "test@otro.com",
+  "password": "password123",
+  "preferred_channel": "email",
+  "role": "user"
+}
+
+
+### 2. REGISTER - Usuario con SMS
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "name": "Usuario SMS",
+  "email": "smsuser@example.com",
+  "password": "password123",
+  "preferred_channel": "sms",
+  "phone": "+573001234567"
+}
+### 3. LOGIN - Autenticación exitosa
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@otro.com",
+  "password": "password123"
+}
+
+### 4. LOGIN - Credenciales incorrectas
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "wrongpassword"
+}
+
+
+
+### 5. LOGIN - Usuario no existente
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "nonexistent@example.com",
+  "password": "password123"
+}

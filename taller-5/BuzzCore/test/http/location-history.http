@@ -1,0 +1,33 @@
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "serranocaroldayana@gmail.com",
+  "password": "carol"
+}
+### 1. CREAR REGISTRO DE UBICACIÓN
+POST http://localhost:3000/location-history
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MmVhMzg3YS04OGU5LTQzM2QtOThiNC1lMjY5MzU4OTI4MTMiLCJlbWFpbCI6InNlcnJhbm9jYXJvbGRheWFuYUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MzE3NTExNCwiZXhwIjoxNzYzNjkzNTE0fQ.bq_vBpK5Jgs5z-TX9dD6dCcvne2Bazv4n-aDxEVOoI8
+
+{
+  "city": "Bogotá",
+  "coordinates": {
+    "lat": 4.710989,
+    "lng": -74.072092
+  }
+}
+### 2. CREAR REGISTRO SIN COORDENADAS
+POST http://localhost:3000/location-history
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MmVhMzg3YS04OGU5LTQzM2QtOThiNC1lMjY5MzU4OTI4MTMiLCJlbWFpbCI6InNlcnJhbm9jYXJvbGRheWFuYUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MzE3NTExNCwiZXhwIjoxNzYzNjkzNTE0fQ.bq_vBpK5Jgs5z-TX9dD6dCcvne2Bazv4n-aDxEVOoI8
+
+{
+  "city": "Medellín"
+}
+
+### 3. OBTENER HISTORIAL DEL USUARIO
+GET http://localhost:3000/location-history
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MmVhMzg3YS04OGU5LTQzM2QtOThiNC1lMjY5MzU4OTI4MTMiLCJlbWFpbCI6InNlcnJhbm9jYXJvbGRheWFuYUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MzE3NTExNCwiZXhwIjoxNzYzNjkzNTE0fQ.bq_vBpK5Jgs5z-TX9dD6dCcvne2Bazv4n-aDxEVOoI8
+

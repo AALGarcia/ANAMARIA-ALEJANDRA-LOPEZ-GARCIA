@@ -1,0 +1,40 @@
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "administrador@example.com",
+  "password": "admin"
+}
+
+### 1. CREAR NOTIFICACIÓN MANUAL
+POST http://localhost:3000/notifications
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzODdkYmMzMi1mZjU1LTQ3NTUtYjJhNC1hOWQyNjdhZjQ1MmEiLCJlbWFpbCI6ImFkbWluaXN0cmFkb3JAZXhhbXBsZS5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NjMxNzU0NDEsImV4cCI6MTc2MzY5Mzg0MX0.M89tdjeQo-w7xdstCTmVvWxDGHODJyEeRInZ8BDtLuY
+
+{
+  "message": "Notificación manual de prueba",
+  "recommended_place": "Centro Comercial Santa Fe",
+  "channel": "email",
+  "location_data": {
+    "city": "Bogotá",
+    "coordinates": {
+      "lat": 4.710989,
+      "lng": -74.072092
+    }
+  }
+}
+
+### 2. PROBAR CON COORDENADAS INVÁLIDAS
+POST http://localhost:3000/notifications/receive-location
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzODdkYmMzMi1mZjU1LTQ3NTUtYjJhNC1hOWQyNjdhZjQ1MmEiLCJlbWFpbCI6ImFkbWluaXN0cmFkb3JAZXhhbXBsZS5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NjMxNzU0NDEsImV4cCI6MTc2MzY5Mzg0MX0.M89tdjeQo-w7xdstCTmVvWxDGHODJyEeRInZ8BDtLuY
+{
+  "lat": 100,
+  "lng": -200,
+  "userId": "USER_ID_AQUI"
+}
+
+### 3. OBTENER ESTADÍSTICAS DE COLA (solo admin)
+GET http://localhost:3000/notifications/queue/stats
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzODdkYmMzMi1mZjU1LTQ3NTUtYjJhNC1hOWQyNjdhZjQ1MmEiLCJlbWFpbCI6ImFkbWluaXN0cmFkb3JAZXhhbXBsZS5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NjMxNzU0NDEsImV4cCI6MTc2MzY5Mzg0MX0.M89tdjeQo-w7xdstCTmVvWxDGHODJyEeRInZ8BDtLuY

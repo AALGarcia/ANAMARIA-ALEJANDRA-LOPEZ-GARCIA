@@ -1,0 +1,56 @@
+
+### 🔄 FLUJO COMPLETO: AUTENTICACIÓN -> UBICACIÓN -> NOTIFICACIÓN
+
+### PASO 1: Registrar usuario para pruebas
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "name": "Usuario de Prueba",
+  "email": "serranocaroldayana@gmail.com",
+  "password": "password123",
+  "phone": "+573001234567",
+  "preferred_channel": "email",
+  "role": "user"
+}
+
+
+### PASO 2: Login para obtener token
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "serranocaroldayana@gmail.com",
+  "password": "password123"
+}
+
+
+
+### PASO 3: Procesar ubicación y crear notificación turística
+POST http://localhost:3000/notifications/receive-location
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0ODNiOGQ4My0wMTMwLTRhYmItYTA4Ni05YmM0MWYxNTMyN2QiLCJlbWFpbCI6InNlcnJhbm9jYXJvbGRheWFuYUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MzYwMDEyNCwiZXhwIjoxNzY0MTE4NTI0fQ.5XNyNPZAcY0LPv2GqY2pc1FXHiGtvgJXMYHbnWIPbns
+{
+  "lat": 4.710989,
+  "lng": -74.072092
+}
+
+### PASO 4: Obtener notificaciones del usuario
+GET http://localhost:3000/notifications
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MmVhMzg3YS04OGU5LTQzM2QtOThiNC1lMjY5MzU4OTI4MTMiLCJlbWFpbCI6InNlcnJhbm9jYXJvbGRheWFuYUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MzE3NTI1NywiZXhwIjoxNzYzNjkzNjU3fQ.0RTar39H6HfvVRlg8kFtyKgUb1bNiaN7EEz3AeOt-V0
+
+### PASO 5: Obtener estadísticas de notificaciones
+GET http://localhost:3000/notifications/stats
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MmVhMzg3YS04OGU5LTQzM2QtOThiNC1lMjY5MzU4OTI4MTMiLCJlbWFpbCI6InNlcnJhbm9jYXJvbGRheWFuYUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MzE3NTI1NywiZXhwIjoxNzYzNjkzNjU3fQ.0RTar39H6HfvVRlg8kFtyKgUb1bNiaN7EEz3AeOt-V0
+
+### PASO 6: Probar detección automática de ciudad (sin city)
+POST http://localhost:3000/notifications/receive-location
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MmVhMzg3YS04OGU5LTQzM2QtOThiNC1lMjY5MzU4OTI4MTMiLCJlbWFpbCI6InNlcnJhbm9jYXJvbGRheWFuYUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MzE3NTI1NywiZXhwIjoxNzYzNjkzNjU3fQ.0RTar39H6HfvVRlg8kFtyKgUb1bNiaN7EEz3AeOt-V0
+
+{
+  "lat": 6.244203,
+  "lng": -75.581215
+}
